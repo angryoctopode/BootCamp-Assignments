@@ -18,7 +18,7 @@ var listingSchema = new Schema({
 /* create a 'pre' function that adds the updated_at (and created_at if not already there) property */
 listingSchema.pre('save', function(next) {
   var currDate = new Date();
-  this.update_at = currDate;
+  this.updated_at = currDate;
   if(!this.created_at) {
       this.created_at = currDate;
   }
